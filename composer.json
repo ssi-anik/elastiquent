@@ -1,0 +1,24 @@
+{
+    "name": "anik/elastiquent",
+    "description": "Elastiquent is a PHP client for Elasticsearch that provides simple way to communicate with your elasticsearch.",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Syed Sirajul Islam Anik",
+            "email": "sirajul.islam.anik@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Anik\\Elastiquent\\": "src/"
+        },
+        "files": [
+            "src/Extension/function_helpers.php"
+        ]
+    },
+    "minimum-stability": "dev",
+    "require": {
+        "laravel/framework": "~5.5"
+    }
+}
