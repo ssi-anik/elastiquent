@@ -1,0 +1,32 @@
+<?php
+
+use Anik\Elastiquent\Mapper;
+use Anik\Elastiquent\Property;
+use Anik\Elastiquent\Map;
+
+class DummyClass extends Mapper
+{
+    protected $index = "YOUR_INDEX_HERE";
+
+    /**
+     * Run the mappings.
+     *
+     * @return void
+     */
+    public function up()
+    {
+        Map::create('DummyType', function (Property $property) {
+
+        });
+    }
+
+    /**
+     * Reverse the mappings.
+     *
+     * @return void
+     */
+    public function down()
+    {
+        Map::dropIfExists('DummyType');
+    }
+}

@@ -1,6 +1,7 @@
 <?php namespace Anik\Elastiquent;
 
 use Anik\Elastiquent\Commands\EqInstallCommand;
+use Anik\Elastiquent\Commands\EqMapCreateCommand;
 use Anik\Elastiquent\Database\MappingMigrationInterface;
 use Anik\Elastiquent\Database\MappingMigrationRepository;
 use Illuminate\Support\ServiceProvider;
@@ -9,6 +10,7 @@ class ElastiquentServiceProvider extends ServiceProvider
 {
 	private $availableCommands = [
 		EqInstallCommand::class,
+		EqMapCreateCommand::class,
 	];
 
 	public function boot () {
@@ -27,7 +29,7 @@ class ElastiquentServiceProvider extends ServiceProvider
 
 	public function register () {
 		$this->publishes([
-			__DIR__ . "config/elastiquent.php" => config_path('elastiquent.php'),
+			__DIR__ . "/config/elastiquent.php" => config_path('elastiquent.php')
 		]);
 	}
 

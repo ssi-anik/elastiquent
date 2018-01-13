@@ -10,8 +10,16 @@ class EqInstallCommand extends BaseCommand
 		if (!$this->repository->isMigrationTableCreated()) {
 			$this->repository->createRepository();
 			$this->line("<info>EQ migrations table created.</info>");
-		} else {
-			$this->line("<info>Migrations table already created.</info>");
+		}
+
+		$mappingDirectory = mapping_path();
+		$this->createMappingDirectory($mappingDirectory);
+	}
+
+
+	private function createMappingDirectory ($directoryPath) {
+		if (!file_exists($directoryPath)) {
+			mkdir($directoryPath, 0777, true);
 		}
 	}
 }
